@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "SignupViewController.h"
+#import "IntroViewController.h"
 #import "ListViewController.h"
 
 @implementation AppDelegate
@@ -52,7 +52,7 @@
     // Future check if user account is created
     if (false)
     {
-        SignupViewController * viewController = [[SignupViewController alloc] initWithNibName:@"Signup" bundle:nil];
+        IntroViewController * viewController = [[IntroViewController alloc] initWithNibName:@"Intro" bundle:nil];
         self.navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
     } else
     {

@@ -7,6 +7,7 @@
 //
 
 #import "ObjectFactory.h"
+#import "NetworkCalls.h"
 #import "Restaurant.h"
 #import "User.h"
 
@@ -33,21 +34,22 @@ User * user;
 {
     if (restaurants == nil)
     {
-        Restaurant * r1 = [Restaurant new];
-        [r1 setName:@"McDonalds"];
-        [r1 setDistance:@"1.14 mi"];
-        
-        Restaurant * r2 = [Restaurant new];
-        [r2 setName:@"Burger King"];
-        [r2 setDistance:@"1.25 mi"];
-
-        
-        Restaurant * r3 = [Restaurant new];
-        [r3 setName:@"Subway"];
-        [r3 setDistance:@"3.1 mi"];
-        
-        restaurants = [[NSMutableArray alloc] initWithObjects:r1, r2, r3, r3, r3, r3, r3, r3, r3, r3, nil];
-        //restaurants = [[NSMutableArray alloc] initWithCapacity:10];
+        restaurants = [NSMutableArray new];
+        NSArray * restList = [NetworkCalls parseRestaurants:[NetworkCalls fetchData:[[NSURL alloc] initWithString:@"http://localhost:8080/restaurants"]]];
+        NSDictionary * temp;
+        Restaurant * r;
+        for (int i = 0; i < [restList count]; i++)
+        {
+            temp = [restList objectAtIndex:i];
+            r = [Restaurant new];
+            [r setName: [temp objectForKey:@"restname"]];
+            [r setAddress:[temp objectForKey:@"restaddress"]];
+            [r setPhone:[temp objectForKey:@"restphone"]];
+            [r setLatitude:[[temp objectForKey:@"restlat"] doubleValue]];
+            [r setLongitude:[[temp objectForKey:@"restlong"] doubleValue]];
+            [r setVotes:[[temp objectForKey:@"restvotes"] integerValue]];
+            [restaurants addObject:r];
+        }
         return restaurants[0];
     } else
     {

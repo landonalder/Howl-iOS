@@ -19,8 +19,8 @@
 		4400B9A61818CB910017A780 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4400B98E1818CB910017A780 /* UIKit.framework */; };
 		4400B9AE1818CB910017A780 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4400B9AC1818CB910017A780 /* InfoPlist.strings */; };
 		4400B9B01818CB910017A780 /* HowlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4400B9AF1818CB910017A780 /* HowlTests.m */; };
-		4442D0151818D590008252BB /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4442D0131818D590008252BB /* SignupViewController.m */; };
-		4442D0161818D590008252BB /* Signup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4442D0141818D590008252BB /* Signup.xib */; };
+		4442D0151818D590008252BB /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4442D0131818D590008252BB /* LoginViewController.m */; };
+		4442D0161818D590008252BB /* Login.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4442D0141818D590008252BB /* Login.xib */; };
 		4442D02E181A2876008252BB /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4442D02C181A2876008252BB /* ListViewController.m */; };
 		4442D02F181A2876008252BB /* List.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4442D02D181A2876008252BB /* List.xib */; };
 		4442D033181A2990008252BB /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4442D031181A2990008252BB /* MapViewController.m */; };
@@ -29,6 +29,11 @@
 		4442D03A181A2C4D008252BB /* OptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4442D038181A2C4D008252BB /* OptionsViewController.m */; };
 		4442D03B181A2C4D008252BB /* Options.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4442D039181A2C4D008252BB /* Options.xib */; };
 		4442D042181A31AA008252BB /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 4442D041181A31AA008252BB /* map.png */; };
+		44D792ED1831F3A800C596DB /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D792EB1831F3A800C596DB /* RegisterViewController.m */; };
+		44D792EE1831F3A800C596DB /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44D792EC1831F3A800C596DB /* RegisterViewController.xib */; };
+		44D792F21831F47B00C596DB /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D792F01831F47B00C596DB /* IntroViewController.m */; };
+		44D792F31831F47B00C596DB /* IntroViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44D792F11831F47B00C596DB /* IntroViewController.xib */; };
+		44D792F61831FE6B00C596DB /* NetworkCalls.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D792F51831FE6B00C596DB /* NetworkCalls.m */; };
 		44D88FA71820B72C009CCE78 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D88FA51820B72C009CCE78 /* DetailViewController.m */; };
 		44D88FA81820B72C009CCE78 /* Detail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44D88FA61820B72C009CCE78 /* Detail.xib */; };
 		44D88FAB1820B8B1009CCE78 /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D88FAA1820B8B1009CCE78 /* Restaurant.m */; };
@@ -63,9 +68,9 @@
 		4400B9AB1818CB910017A780 /* HowlTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HowlTests-Info.plist"; sourceTree = "<group>"; };
 		4400B9AD1818CB910017A780 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4400B9AF1818CB910017A780 /* HowlTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HowlTests.m; sourceTree = "<group>"; };
-		4442D0121818D590008252BB /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignupViewController.h; path = Howl/SignupViewController.h; sourceTree = "<group>"; };
-		4442D0131818D590008252BB /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SignupViewController.m; path = Howl/SignupViewController.m; sourceTree = "<group>"; };
-		4442D0141818D590008252BB /* Signup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Signup.xib; path = Howl/Signup.xib; sourceTree = "<group>"; };
+		4442D0121818D590008252BB /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = Howl/LoginViewController.h; sourceTree = "<group>"; };
+		4442D0131818D590008252BB /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = Howl/LoginViewController.m; sourceTree = "<group>"; };
+		4442D0141818D590008252BB /* Login.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Login.xib; path = Howl/Login.xib; sourceTree = "<group>"; };
 		4442D017181A1A02008252BB /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		4442D02B181A2876008252BB /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListViewController.h; path = Howl/ListViewController.h; sourceTree = "<group>"; };
 		4442D02C181A2876008252BB /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListViewController.m; path = Howl/ListViewController.m; sourceTree = "<group>"; };
@@ -78,6 +83,14 @@
 		4442D038181A2C4D008252BB /* OptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OptionsViewController.m; path = Howl/OptionsViewController.m; sourceTree = "<group>"; };
 		4442D039181A2C4D008252BB /* Options.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Options.xib; path = Howl/Options.xib; sourceTree = "<group>"; };
 		4442D041181A31AA008252BB /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
+		44D792EA1831F3A800C596DB /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = Howl/RegisterViewController.h; sourceTree = "<group>"; };
+		44D792EB1831F3A800C596DB /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterViewController.m; path = Howl/RegisterViewController.m; sourceTree = "<group>"; };
+		44D792EC1831F3A800C596DB /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RegisterViewController.xib; path = Howl/RegisterViewController.xib; sourceTree = "<group>"; };
+		44D792EF1831F47B00C596DB /* IntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntroViewController.h; path = Howl/IntroViewController.h; sourceTree = "<group>"; };
+		44D792F01831F47B00C596DB /* IntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IntroViewController.m; path = Howl/IntroViewController.m; sourceTree = "<group>"; };
+		44D792F11831F47B00C596DB /* IntroViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IntroViewController.xib; path = Howl/IntroViewController.xib; sourceTree = "<group>"; };
+		44D792F41831FE6B00C596DB /* NetworkCalls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkCalls.h; path = Howl/NetworkCalls.h; sourceTree = "<group>"; };
+		44D792F51831FE6B00C596DB /* NetworkCalls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkCalls.m; path = Howl/NetworkCalls.m; sourceTree = "<group>"; };
 		44D88FA41820B72C009CCE78 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DetailViewController.h; path = Howl/DetailViewController.h; sourceTree = "<group>"; };
 		44D88FA51820B72C009CCE78 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DetailViewController.m; path = Howl/DetailViewController.m; sourceTree = "<group>"; };
 		44D88FA61820B72C009CCE78 /* Detail.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Detail.xib; path = Howl/Detail.xib; sourceTree = "<group>"; };
@@ -194,9 +207,9 @@
 		4442D00E1818CFBF008252BB /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4442D0121818D590008252BB /* SignupViewController.h */,
-				4442D0131818D590008252BB /* SignupViewController.m */,
-				4442D0141818D590008252BB /* Signup.xib */,
+				4442D0121818D590008252BB /* LoginViewController.h */,
+				4442D0131818D590008252BB /* LoginViewController.m */,
+				4442D0141818D590008252BB /* Login.xib */,
 				4442D02B181A2876008252BB /* ListViewController.h */,
 				4442D02C181A2876008252BB /* ListViewController.m */,
 				4442D02D181A2876008252BB /* List.xib */,
@@ -209,6 +222,12 @@
 				44D88FA41820B72C009CCE78 /* DetailViewController.h */,
 				44D88FA51820B72C009CCE78 /* DetailViewController.m */,
 				44D88FA61820B72C009CCE78 /* Detail.xib */,
+				44D792EA1831F3A800C596DB /* RegisterViewController.h */,
+				44D792EB1831F3A800C596DB /* RegisterViewController.m */,
+				44D792EC1831F3A800C596DB /* RegisterViewController.xib */,
+				44D792EF1831F47B00C596DB /* IntroViewController.h */,
+				44D792F01831F47B00C596DB /* IntroViewController.m */,
+				44D792F11831F47B00C596DB /* IntroViewController.xib */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -229,6 +248,8 @@
 			children = (
 				44D88FAF1820C0E1009CCE78 /* ObjectFactory.h */,
 				44D88FB01820C0E1009CCE78 /* ObjectFactory.m */,
+				44D792F41831FE6B00C596DB /* NetworkCalls.h */,
+				44D792F51831FE6B00C596DB /* NetworkCalls.m */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -316,11 +337,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4442D0161818D590008252BB /* Signup.xib in Resources */,
+				4442D0161818D590008252BB /* Login.xib in Resources */,
+				44D792F31831F47B00C596DB /* IntroViewController.xib in Resources */,
 				4400B9951818CB910017A780 /* InfoPlist.strings in Resources */,
 				4442D02F181A2876008252BB /* List.xib in Resources */,
 				44D88FA81820B72C009CCE78 /* Detail.xib in Resources */,
 				4442D03B181A2C4D008252BB /* Options.xib in Resources */,
+				44D792EE1831F3A800C596DB /* RegisterViewController.xib in Resources */,
 				4442D042181A31AA008252BB /* map.png in Resources */,
 				4442D034181A2990008252BB /* Map.xib in Resources */,
 				4400B99D1818CB910017A780 /* Images.xcassets in Resources */,
@@ -342,15 +365,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44D792ED1831F3A800C596DB /* RegisterViewController.m in Sources */,
 				44D88FAB1820B8B1009CCE78 /* Restaurant.m in Sources */,
-				4442D0151818D590008252BB /* SignupViewController.m in Sources */,
+				4442D0151818D590008252BB /* LoginViewController.m in Sources */,
 				44D88FAE1820BC95009CCE78 /* User.m in Sources */,
 				4400B99B1818CB910017A780 /* AppDelegate.m in Sources */,
 				4442D033181A2990008252BB /* MapViewController.m in Sources */,
 				44D88FB11820C0E1009CCE78 /* ObjectFactory.m in Sources */,
+				44D792F21831F47B00C596DB /* IntroViewController.m in Sources */,
 				4442D02E181A2876008252BB /* ListViewController.m in Sources */,
 				4400B9971818CB910017A780 /* main.m in Sources */,
 				4442D03A181A2C4D008252BB /* OptionsViewController.m in Sources */,
+				44D792F61831FE6B00C596DB /* NetworkCalls.m in Sources */,
 				44D88FA71820B72C009CCE78 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

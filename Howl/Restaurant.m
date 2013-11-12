@@ -13,7 +13,11 @@
 @property (strong, atomic) NSString * pName;
 @property (strong, atomic) NSString * pAddress;
 @property (strong, atomic) NSString * pPhone;
-@property (strong, atomic) NSString * pDistance;
+@property (atomic) double pLatitude;
+@property (atomic) double pLongitude;
+@property (atomic) NSInteger pVotes;
+
+
 
 @end
 
@@ -34,10 +38,22 @@
     self.pPhone = phone;
 }
 
--(void)setDistance:(NSString *)distance
+-(void)setLatitude:(double)latitude
 {
-    self.pDistance = distance;
+    self.pLatitude = latitude;
 }
+
+-(void)setLongitude:(double)longitude
+{
+    self.pLongitude = longitude;
+}
+
+-(void)setVotes:(NSInteger)votes
+{
+    self.pVotes = votes;
+}
+
+
 
 -(NSString *)getName
 {
@@ -54,10 +70,21 @@
     return self.pPhone;
 }
 
--(NSString *)getDistance
+-(double)getLatitude
 {
-    return self.pDistance;
+    return self.pLatitude;
 }
+
+-(double)getLongitude
+{
+    return self.pLongitude;
+}
+
+-(NSInteger)getVotes
+{
+    return self.pVotes;
+}
+
 
 
 @end

@@ -13,12 +13,15 @@
 -(void)setName:(NSString *)name;
 -(void)setAddress:(NSString *)address;
 -(void)setPhone:(NSString *)phone;
--(void)setDistance:(NSString *)distance;
+-(void)setLatitude:(double)latitude;
+-(void)setLongitude:(double)longitude;
+-(void)setVotes:(NSInteger)votes;
 
 -(NSString *)getName;
 -(NSString *)getAddress;
 -(NSString *)getPhone;
--(NSString *)getDistance;
-
+-(double)getLatitude;
+-(double)getLongitude;
+-(NSInteger)getVotes;
 
 @end

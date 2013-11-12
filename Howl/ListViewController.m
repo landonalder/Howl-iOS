@@ -66,20 +66,19 @@
         Restaurant * restaurant = [ObjectFactory getRestaurant:indexPath.row];
         
         UILabel * restName = [UILabel new];
-        restName.frame = CGRectMake(40, 0, 150, 44);
+        restName.frame = CGRectMake(40, 0, 230, 44);
         restName.text = [restaurant getName];
         restName.backgroundColor = [UIColor clearColor];
         [cell addSubview:restName];
         
         UILabel * restNumber = [UILabel new];
-        restNumber.frame = CGRectMake(10, 0, 15, 44);
+        restNumber.frame = CGRectMake(10, 0, 20, 44);
         restNumber.text = [NSString stringWithFormat:@"%d", indexPath.row + 1];
         restNumber.backgroundColor = [UIColor clearColor];
         [cell addSubview:restNumber];
         
         UILabel * restDistance = [UILabel new];
         restDistance.frame = CGRectMake(230, 0, 60, 44);
-        restDistance.text = [restaurant getDistance];
         restDistance.backgroundColor = [UIColor clearColor];
         [cell addSubview:restDistance];
         
@@ -133,7 +132,7 @@
 {
     DetailViewController *detailViewController = [[DetailViewController alloc] initWithNibName:@"Detail" bundle:nil];
 
-    // Pass the selected object to the new view controller.
+    [detailViewController setRestNum:indexPath.row];
     
     // Push the view controller.
     [self.navigationController pushViewController:detailViewController animated:YES];
