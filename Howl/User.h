@@ -7,11 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface User : NSObject
 
 -(NSString *)getEmail;
 -(BOOL)isActive;
+-(CLLocation *)getLocation;
+-(void)setLocation:(CLLocation *)loc;
 -(void)setEmail:(NSString *)email;
 -(void)setActive:(BOOL)active;
 

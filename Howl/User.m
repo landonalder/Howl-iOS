@@ -7,10 +7,12 @@
 //
 
 #import "User.h"
+#import <CoreLocation/CoreLocation.h>
 @interface User ()
 
 @property(strong, atomic) NSString * pEmail;
 @property(strong, atomic) NSNumber * pActive;
+@property(strong, atomic) CLLocation * pLocation;
 
 @end
 
@@ -35,6 +37,16 @@
 -(void)setActive:(BOOL)active
 {
     self.pActive = [NSNumber numberWithBool:active];
+}
+
+-(CLLocation *)getLocation
+{
+    return self.pLocation;
+}
+
+-(void)setLocation:(CLLocation *)loc
+{
+    self.pLocation = loc;
 }
 
 @end
