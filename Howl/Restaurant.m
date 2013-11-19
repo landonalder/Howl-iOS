@@ -7,6 +7,7 @@
 //
 
 #import "Restaurant.h"
+#import "NetworkCalls.h"
 
 @interface Restaurant ()
 
@@ -16,8 +17,7 @@
 @property (atomic) double pLatitude;
 @property (atomic) double pLongitude;
 @property (atomic) NSInteger pVotes;
-
-
+@property (atomic) NSInteger pNumber;
 
 @end
 
@@ -26,6 +26,11 @@
 -(void)setName:(NSString *)name
 {
     self.pName = name;
+}
+
+-(void)setNumber:(NSInteger)number
+{
+    self.pNumber = number;
 }
 
 -(void)setAddress:(NSString *)address
@@ -52,8 +57,6 @@
 {
     self.pVotes = votes;
 }
-
-
 
 -(NSString *)getName
 {
@@ -83,6 +86,16 @@
 -(NSInteger)getVotes
 {
     return self.pVotes;
+}
+
+-(void)increaseVotes
+{
+    [NetworkCalls putToURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%d", @"http://nodejs-discoverhowl.rhcloud.com/vote/1", self.pNumber]]];
+}
+
+-(void)decreaseVotes
+{
+    // code to decrease
 }
 
 

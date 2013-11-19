@@ -35,13 +35,14 @@ User * user;
     if (restaurants == nil)
     {
         restaurants = [NSMutableArray new];
-        NSArray * restList = [NetworkCalls parseRestaurants:[NetworkCalls fetchData:[[NSURL alloc] initWithString:@"http://localhost:8080/restaurants"]]];
+        NSArray * restList = [NetworkCalls parseRestaurants:[NetworkCalls fetchData:[[NSURL alloc] initWithString:@"http://nodejs-discoverhowl.rhcloud.com/list/1"]]];
         NSDictionary * temp;
         Restaurant * r;
         for (int i = 0; i < [restList count]; i++)
         {
             temp = [restList objectAtIndex:i];
             r = [Restaurant new];
+            [r setNumber:i];
             [r setName: [temp objectForKey:@"restname"]];
             [r setAddress:[temp objectForKey:@"restaddress"]];
             [r setPhone:[temp objectForKey:@"restphone"]];

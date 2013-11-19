@@ -12,6 +12,8 @@
 
 +(NSData *)fetchData:(NSURL *)fromURL;
 +(NSArray *)parseRestaurants:(NSData *)restaurants;
++(void)setData:(NSString *)data forURL:(NSURL *)url;
++(void)putToURL:(NSURL *)url;
 
 
 @end

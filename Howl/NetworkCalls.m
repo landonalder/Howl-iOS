@@ -10,7 +10,7 @@
 
 @implementation NetworkCalls
 
-+(NSData *)fetchData:(NSURL *)fromURL
++(void)fetchData:(NSURL *)fromURL
 {
     NSURLRequest * urlRequest = [NSURLRequest requestWithURL:fromURL cachePolicy:NSURLRequestReloadRevalidatingCacheData timeoutInterval:30];
     
@@ -18,15 +18,9 @@
     NSURLResponse * response;
     NSError * error = nil;
     
-    urlData = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&response error:&error];
-    
-    if (!error)
-    {
-        return urlData;
-    } else
-    {
-        return nil;
-    }
+    [NSURLConnection sendAsynchronousRequest:urlRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * response, NSData * urldata, NSError * error) {
+        [self parseRestaurants:urlData];
+    }];
 }
 
 +(NSArray *)parseRestaurants:(NSData *)restaurants
@@ -41,6 +35,13 @@
     {
         return nil;
     }
+}
+
++(void)putToURL:(NSURL *)url
+{
+    NSMutableURLRequest * request = [[NSMutableURLRequest alloc] initWithURL:url];
+    [request setHTTPMethod:@"PUT"];
+    [[NSURLConnection alloc] initWithRequest:request delegate:self];
 }
 
 @end

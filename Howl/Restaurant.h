@@ -11,6 +11,7 @@
 @interface Restaurant : NSObject
 
 -(void)setName:(NSString *)name;
+-(void)setNumber:(NSInteger)number;
 -(void)setAddress:(NSString *)address;
 -(void)setPhone:(NSString *)phone;
 -(void)setLatitude:(double)latitude;
@@ -23,5 +24,8 @@
 -(double)getLatitude;
 -(double)getLongitude;
 -(NSInteger)getVotes;
+
+-(void)increaseVotes;
+-(void)decreaseVotes;
 
 @end
