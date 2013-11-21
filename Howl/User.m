@@ -18,6 +18,16 @@
 
 @implementation User
 
+-(id)init
+{
+    self = [super init];
+    if (self)
+    {
+        self.pActive = false;
+    }
+    return self;
+}
+
 -(NSString *)getEmail
 {
     return self.pEmail;

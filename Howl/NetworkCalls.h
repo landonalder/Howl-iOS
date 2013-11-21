@@ -11,7 +11,7 @@
 
 @interface NetworkCalls : NSObject
 
-+(void)fetchData:(NSURL *)fromURL withCallback:(Callback *)callback;
++(void)fetchData:(NSURL *)fromURL withCallback:(id<CallbackDelegate>)callback;
 +(void)putToURL:(NSURL *)url;
 
 

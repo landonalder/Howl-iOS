@@ -14,7 +14,7 @@
 
 NSData * dataResponse;
 
-+(void)fetchData:(NSURL *)fromURL withCallback:(Callback *)callback
++(void)fetchData:(NSURL *)fromURL withCallback:(id<CallbackDelegate>)callback
 {
     NSMutableURLRequest * urlRequest = [NSMutableURLRequest new];
     [urlRequest setHTTPMethod:@"GET"];
@@ -25,7 +25,7 @@ NSData * dataResponse;
             NSLog(@"%@", [connectionError localizedDescription]);
         } else {
             NSArray * restList = [NSJSONSerialization JSONObjectWithData:data options:0 error:Nil];
-            [(id<CallbackDelegate>)callback onAction:nil object:restList];
+            [callback onAction:nil object:restList];
         }
     }];
 }

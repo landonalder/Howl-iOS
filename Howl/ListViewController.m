@@ -7,7 +7,6 @@
 //
 
 #import "ListViewController.h"
-#import "MapViewController.h"
 #import "DetailViewController.h"
 #import "Callback.h"
 #import "NetworkCalls.h"
@@ -25,9 +24,14 @@
     return self;
 }
 
-- (void)viewDidLoad
+-(void)viewDidLoad
 {
     [super viewDidLoad];
+    [self initView];
+}
+
+-(void)initView
+{
     self.title = @"Howl";
     [NetworkCalls fetchData:[[NSURL alloc] initWithString:@"http://nodejs-discoverhowl.rhcloud.com/list/1"] withCallback:self];
 }
@@ -56,33 +60,34 @@
     if (cell == nil) {
         cell = [UITableViewCell new];
         Restaurant * restaurant = [ObjectFactory getRestaurant:indexPath.row];
-        
-        UILabel * restName = [UILabel new];
-        restName.frame = CGRectMake(50, 0, 280, 44);
-        restName.text = [restaurant getName];
-        restName.backgroundColor = [UIColor clearColor];
-        [cell addSubview:restName];
-        
-        UILabel * restNumber = [UILabel new];
-        restNumber.frame = CGRectMake(30, 0, 20, 44);
-        restNumber.text = [NSString stringWithFormat:@"%d", indexPath.row + 1];
-        restNumber.backgroundColor = [UIColor clearColor];
-        [cell addSubview:restNumber];
-        
-        UILabel * restDistance = [UILabel new];
-        restDistance.frame = CGRectMake(230, 0, 60, 44);
-        restDistance.backgroundColor = [UIColor clearColor];
-        [cell addSubview:restDistance];
-        
-        // TODO: Add touch sensor for vote method
-        UIButton * upVote = [[UIButton alloc] initWithFrame:CGRectMake(10, 5, 15, 15)];
-        [upVote setImage:[UIImage imageNamed:@"up.png"] forState:UIControlStateNormal];
-        [upVote addTarget:restaurant action:@selector(increaseVotes) forControlEvents:UIControlEventTouchUpInside];
-        [cell addSubview:upVote];
-        
-        UIButton * downVote = [[UIButton alloc] initWithFrame:CGRectMake(10, 25, 15, 15)];
-        [downVote setImage:[UIImage imageNamed:@"down.png"] forState:UIControlStateNormal];
-        [cell addSubview:downVote];
+        if (restaurant) {
+            UILabel * restName = [UILabel new];
+            restName.frame = CGRectMake(50, 0, 280, 44);
+            restName.text = [restaurant getName];
+            restName.backgroundColor = [UIColor clearColor];
+            [cell addSubview:restName];
+            
+            UILabel * restNumber = [UILabel new];
+            restNumber.frame = CGRectMake(30, 0, 20, 44);
+            restNumber.text = [NSString stringWithFormat:@"%d", indexPath.row + 1];
+            restNumber.backgroundColor = [UIColor clearColor];
+            [cell addSubview:restNumber];
+            
+            UILabel * restDistance = [UILabel new];
+            restDistance.frame = CGRectMake(230, 0, 60, 44);
+            restDistance.backgroundColor = [UIColor clearColor];
+            [cell addSubview:restDistance];
+            
+            // TODO: Add touch sensor for vote method
+            UIButton * upVote = [[UIButton alloc] initWithFrame:CGRectMake(10, 5, 15, 15)];
+            [upVote setImage:[UIImage imageNamed:@"up.png"] forState:UIControlStateNormal];
+            [upVote addTarget:restaurant action:@selector(increaseVotes) forControlEvents:UIControlEventTouchUpInside];
+            [cell addSubview:upVote];
+            
+            UIButton * downVote = [[UIButton alloc] initWithFrame:CGRectMake(10, 25, 15, 15)];
+            [downVote setImage:[UIImage imageNamed:@"down.png"] forState:UIControlStateNormal];
+            [cell addSubview:downVote];
+        }
     }
     
     

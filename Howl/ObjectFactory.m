@@ -46,8 +46,7 @@ User * user;
     if (restaurants == nil || [restaurants count] < 1)
     {
         restaurants = [NSMutableArray new];
-        Restaurant * r = [Restaurant new];
-        return r;
+        return nil;
     } else
     {
         return [restaurants objectAtIndex:number];

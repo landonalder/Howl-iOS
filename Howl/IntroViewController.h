@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface IntroViewController : UIViewController
+@interface IntroViewController : UIViewController <UITextFieldDelegate>
 
 @property (atomic, weak) IBOutlet UIButton * pLogin;
 @property (atomic, weak) IBOutlet UIButton * pRegister;

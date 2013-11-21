@@ -9,7 +9,6 @@
 #import <CoreLocation/CoreLocation.h>
 #import "AppDelegate.h"
 #import "IntroViewController.h"
-#import "NetworkCalls.h"
 #import "ListViewController.h"
 #import "ObjectFactory.h"
 #import "User.h"
@@ -30,7 +29,6 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    [locationManager stopMonitoringSignificantLocationChanges];
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
@@ -68,28 +66,34 @@
 -(void)loadView
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-        
+    
+    UIViewController * vc;
     // Future check if user account is created
-    if (FALSE)
+    if (![[ObjectFactory getUser] isActive])
     {
-        IntroViewController * viewController = [[IntroViewController alloc] initWithNibName:@"Intro" bundle:nil];
-        self.window.rootViewController = viewController;
+        vc = [[IntroViewController alloc] initWithNibName:@"Intro" bundle:nil];
     } else
     {
-        ListViewController * viewController = [[ListViewController alloc] initWithNibName:@"List" bundle:nil];
-        self.navigationController = [[UINavigationController alloc] initWithRootViewController:viewController];
-        self.window.rootViewController = self.navigationController;
-        
-        // Navigation bar appearance
-        self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.0f/255.0f green:121.0f/255.0f blue:226.0f/255.f alpha:1.0];
-        self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
-        self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-        
-        UIView *colourView = [[UIView alloc] initWithFrame:CGRectMake(0.f, -20.f, 320.f, 64.f)];
-        colourView.opaque = NO;
-        colourView.alpha = .4f;
-        colourView.backgroundColor = self.navigationController.navigationBar.barTintColor;
-        [self.navigationController.navigationBar.layer insertSublayer:colourView.layer atIndex:1];
+        vc = [[ListViewController alloc] initWithNibName:@"List" bundle:nil];
+    }
+    
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:vc];
+    self.window.rootViewController = self.navigationController;
+    
+    // Navigation bar appearance
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.0f/255.0f green:121.0f/255.0f blue:226.0f/255.f alpha:1.0];
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    
+    UIView *colourView = [[UIView alloc] initWithFrame:CGRectMake(0.f, -20.f, 320.f, 64.f)];
+    colourView.opaque = NO;
+    colourView.alpha = .4f;
+    colourView.backgroundColor = self.navigationController.navigationBar.barTintColor;
+    [self.navigationController.navigationBar.layer insertSublayer:colourView.layer atIndex:1];
+    
+    if(![[ObjectFactory getUser] isActive])
+    {
+        self.navigationController.navigationBarHidden = YES;
     }
     
     [self.window makeKeyAndVisible];

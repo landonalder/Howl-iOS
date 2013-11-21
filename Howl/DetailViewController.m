@@ -8,6 +8,7 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import "DetailViewController.h"
+#import "User.h"
 #import "ObjectFactory.h"
 #import "Restaurant.h"
 
@@ -52,7 +53,8 @@ Restaurant * r;
 -(void)locate
 {
     // Still much more to do
-    MKMapItem * mapItem = [[MKMapItem alloc] initWithPlacemark:nil];
+    MKPlacemark * placeMark = [[MKPlacemark alloc] initWithCoordinate:CLLocationCoordinate2DMake(r.getLatitude, r.getLongitude) addressDictionary:nil];
+    MKMapItem * mapItem = [[MKMapItem alloc] initWithPlacemark:placeMark];
     [mapItem openInMapsWithLaunchOptions:0];
 }
 

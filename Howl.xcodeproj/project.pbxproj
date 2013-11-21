@@ -21,8 +21,6 @@
 		4400B9B01818CB910017A780 /* HowlTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4400B9AF1818CB910017A780 /* HowlTests.m */; };
 		4442D02E181A2876008252BB /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4442D02C181A2876008252BB /* ListViewController.m */; };
 		4442D02F181A2876008252BB /* List.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4442D02D181A2876008252BB /* List.xib */; };
-		4442D033181A2990008252BB /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4442D031181A2990008252BB /* MapViewController.m */; };
-		4442D034181A2990008252BB /* Map.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4442D032181A2990008252BB /* Map.xib */; };
 		4442D036181A29AF008252BB /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4442D035181A29AF008252BB /* MapKit.framework */; };
 		4442D03A181A2C4D008252BB /* OptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4442D038181A2C4D008252BB /* OptionsViewController.m */; };
 		4442D03B181A2C4D008252BB /* Options.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4442D039181A2C4D008252BB /* Options.xib */; };
@@ -38,6 +36,7 @@
 		44D88FAB1820B8B1009CCE78 /* Restaurant.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D88FAA1820B8B1009CCE78 /* Restaurant.m */; };
 		44D88FAE1820BC95009CCE78 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D88FAD1820BC95009CCE78 /* User.m */; };
 		44D88FB11820C0E1009CCE78 /* ObjectFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D88FB01820C0E1009CCE78 /* ObjectFactory.m */; };
+		44F4AABA183DBE6E00E85575 /* Validator.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F4AAB9183DBE6E00E85575 /* Validator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,9 +70,6 @@
 		4442D02B181A2876008252BB /* ListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ListViewController.h; path = Howl/ListViewController.h; sourceTree = "<group>"; };
 		4442D02C181A2876008252BB /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ListViewController.m; path = Howl/ListViewController.m; sourceTree = "<group>"; };
 		4442D02D181A2876008252BB /* List.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = List.xib; path = Howl/List.xib; sourceTree = "<group>"; };
-		4442D030181A2990008252BB /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapViewController.h; path = Howl/MapViewController.h; sourceTree = "<group>"; };
-		4442D031181A2990008252BB /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MapViewController.m; path = Howl/MapViewController.m; sourceTree = "<group>"; };
-		4442D032181A2990008252BB /* Map.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Map.xib; path = Howl/Map.xib; sourceTree = "<group>"; };
 		4442D035181A29AF008252BB /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		4442D037181A2C4D008252BB /* OptionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OptionsViewController.h; path = Howl/OptionsViewController.h; sourceTree = "<group>"; };
 		4442D038181A2C4D008252BB /* OptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OptionsViewController.m; path = Howl/OptionsViewController.m; sourceTree = "<group>"; };
@@ -97,6 +93,8 @@
 		44D88FAD1820BC95009CCE78 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = Howl/User.m; sourceTree = "<group>"; };
 		44D88FAF1820C0E1009CCE78 /* ObjectFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectFactory.h; path = Howl/ObjectFactory.h; sourceTree = "<group>"; };
 		44D88FB01820C0E1009CCE78 /* ObjectFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjectFactory.m; path = Howl/ObjectFactory.m; sourceTree = "<group>"; };
+		44F4AAB8183DBE6E00E85575 /* Validator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Validator.h; path = Howl/Validator.h; sourceTree = "<group>"; };
+		44F4AAB9183DBE6E00E85575 /* Validator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Validator.m; path = Howl/Validator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,9 +205,6 @@
 				4442D02B181A2876008252BB /* ListViewController.h */,
 				4442D02C181A2876008252BB /* ListViewController.m */,
 				4442D02D181A2876008252BB /* List.xib */,
-				4442D030181A2990008252BB /* MapViewController.h */,
-				4442D031181A2990008252BB /* MapViewController.m */,
-				4442D032181A2990008252BB /* Map.xib */,
 				4442D037181A2C4D008252BB /* OptionsViewController.h */,
 				4442D038181A2C4D008252BB /* OptionsViewController.m */,
 				4442D039181A2C4D008252BB /* Options.xib */,
@@ -237,11 +232,14 @@
 		4442D0111818D069008252BB /* Util */ = {
 			isa = PBXGroup;
 			children = (
-				4443C10A183B1CE100024B40 /* Network */,
 				44D88FAF1820C0E1009CCE78 /* ObjectFactory.h */,
 				44D88FB01820C0E1009CCE78 /* ObjectFactory.m */,
 				4443C111183D98F000024B40 /* Callback.h */,
 				4443C112183D98F000024B40 /* Callback.m */,
+				44D792F41831FE6B00C596DB /* NetworkCalls.h */,
+				44D792F51831FE6B00C596DB /* NetworkCalls.m */,
+				44F4AAB8183DBE6E00E85575 /* Validator.h */,
+				44F4AAB9183DBE6E00E85575 /* Validator.m */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -254,15 +252,6 @@
 				4442D041181A31AA008252BB /* map.png */,
 			);
 			name = Images;
-			sourceTree = "<group>";
-		};
-		4443C10A183B1CE100024B40 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				44D792F41831FE6B00C596DB /* NetworkCalls.h */,
-				44D792F51831FE6B00C596DB /* NetworkCalls.m */,
-			);
-			name = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,7 +337,6 @@
 				44D88FA81820B72C009CCE78 /* Detail.xib in Resources */,
 				4442D03B181A2C4D008252BB /* Options.xib in Resources */,
 				4442D042181A31AA008252BB /* map.png in Resources */,
-				4442D034181A2990008252BB /* Map.xib in Resources */,
 				4400B99D1818CB910017A780 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -372,11 +360,11 @@
 				44D88FAB1820B8B1009CCE78 /* Restaurant.m in Sources */,
 				44D88FAE1820BC95009CCE78 /* User.m in Sources */,
 				4400B99B1818CB910017A780 /* AppDelegate.m in Sources */,
-				4442D033181A2990008252BB /* MapViewController.m in Sources */,
 				44D88FB11820C0E1009CCE78 /* ObjectFactory.m in Sources */,
 				44D792F21831F47B00C596DB /* IntroViewController.m in Sources */,
 				4442D02E181A2876008252BB /* ListViewController.m in Sources */,
 				4400B9971818CB910017A780 /* main.m in Sources */,
+				44F4AABA183DBE6E00E85575 /* Validator.m in Sources */,
 				4442D03A181A2C4D008252BB /* OptionsViewController.m in Sources */,
 				44D792F61831FE6B00C596DB /* NetworkCalls.m in Sources */,
 				44D88FA71820B72C009CCE78 /* DetailViewController.m in Sources */,
