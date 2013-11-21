@@ -7,6 +7,7 @@
 //
 
 #import "ObjectFactory.h"
+#import "Callback.h"
 #import "NetworkCalls.h"
 #import "Restaurant.h"
 #import "User.h"
@@ -30,28 +31,23 @@ User * user;
     return restaurants;
 }
 
-+(Restaurant *)getRestaurant:(NSUInteger)number
++(void)addRestaurant:(Restaurant *)rest atIndex:(NSUInteger)index
 {
-    if (restaurants == nil)
+    [restaurants insertObject:rest atIndex:index];
+}
+
++(void)addRestaurant:(Restaurant *)rest
+{
+    [restaurants addObject:rest];
+}
+
++(Restaurant *)getRestaurant:(NSUInteger)number
+{    
+    if (restaurants == nil || [restaurants count] < 1)
     {
         restaurants = [NSMutableArray new];
-        NSArray * restList = [NetworkCalls parseRestaurants:[NetworkCalls fetchData:[[NSURL alloc] initWithString:@"http://nodejs-discoverhowl.rhcloud.com/list/1"]]];
-        NSDictionary * temp;
-        Restaurant * r;
-        for (int i = 0; i < [restList count]; i++)
-        {
-            temp = [restList objectAtIndex:i];
-            r = [Restaurant new];
-            [r setNumber:i];
-            [r setName: [temp objectForKey:@"restname"]];
-            [r setAddress:[temp objectForKey:@"restaddress"]];
-            [r setPhone:[temp objectForKey:@"restphone"]];
-            [r setLatitude:[[temp objectForKey:@"restlat"] doubleValue]];
-            [r setLongitude:[[temp objectForKey:@"restlong"] doubleValue]];
-            [r setVotes:[[temp objectForKey:@"restvotes"] integerValue]];
-            [restaurants addObject:r];
-        }
-        return restaurants[0];
+        Restaurant * r = [Restaurant new];
+        return r;
     } else
     {
         return [restaurants objectAtIndex:number];

@@ -29,8 +29,7 @@
 		4442D042181A31AA008252BB /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 4442D041181A31AA008252BB /* map.png */; };
 		4443C105183AFC7C00024B40 /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = 4443C103183AFC7C00024B40 /* down.png */; };
 		4443C106183AFC7C00024B40 /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = 4443C104183AFC7C00024B40 /* up.png */; };
-		4443C109183B144000024B40 /* NetworkCallback.m in Sources */ = {isa = PBXBuildFile; fileRef = 4443C108183B144000024B40 /* NetworkCallback.m */; };
-		4443C110183B1D7500024B40 /* RestCommand.m in Sources */ = {isa = PBXBuildFile; fileRef = 4443C10F183B1D7500024B40 /* RestCommand.m */; };
+		4443C113183D98F000024B40 /* Callback.m in Sources */ = {isa = PBXBuildFile; fileRef = 4443C112183D98F000024B40 /* Callback.m */; };
 		44D792F21831F47B00C596DB /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D792F01831F47B00C596DB /* IntroViewController.m */; };
 		44D792F31831F47B00C596DB /* Intro.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44D792F11831F47B00C596DB /* Intro.xib */; };
 		44D792F61831FE6B00C596DB /* NetworkCalls.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D792F51831FE6B00C596DB /* NetworkCalls.m */; };
@@ -82,10 +81,8 @@
 		4442D041181A31AA008252BB /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
 		4443C103183AFC7C00024B40 /* down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down.png; sourceTree = "<group>"; };
 		4443C104183AFC7C00024B40 /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = up.png; sourceTree = "<group>"; };
-		4443C107183B144000024B40 /* NetworkCallback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkCallback.h; path = Howl/NetworkCallback.h; sourceTree = "<group>"; };
-		4443C108183B144000024B40 /* NetworkCallback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkCallback.m; path = Howl/NetworkCallback.m; sourceTree = "<group>"; };
-		4443C10E183B1D7500024B40 /* RestCommand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RestCommand.h; path = Howl/RestCommand.h; sourceTree = "<group>"; };
-		4443C10F183B1D7500024B40 /* RestCommand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RestCommand.m; path = Howl/RestCommand.m; sourceTree = "<group>"; };
+		4443C111183D98F000024B40 /* Callback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Callback.h; path = Howl/Callback.h; sourceTree = "<group>"; };
+		4443C112183D98F000024B40 /* Callback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Callback.m; path = Howl/Callback.m; sourceTree = "<group>"; };
 		44D792EF1831F47B00C596DB /* IntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntroViewController.h; path = Howl/IntroViewController.h; sourceTree = "<group>"; };
 		44D792F01831F47B00C596DB /* IntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IntroViewController.m; path = Howl/IntroViewController.m; sourceTree = "<group>"; };
 		44D792F11831F47B00C596DB /* Intro.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Intro.xib; path = Howl/Intro.xib; sourceTree = "<group>"; };
@@ -243,6 +240,8 @@
 				4443C10A183B1CE100024B40 /* Network */,
 				44D88FAF1820C0E1009CCE78 /* ObjectFactory.h */,
 				44D88FB01820C0E1009CCE78 /* ObjectFactory.m */,
+				4443C111183D98F000024B40 /* Callback.h */,
+				4443C112183D98F000024B40 /* Callback.m */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -260,12 +259,8 @@
 		4443C10A183B1CE100024B40 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				4443C107183B144000024B40 /* NetworkCallback.h */,
-				4443C108183B144000024B40 /* NetworkCallback.m */,
 				44D792F41831FE6B00C596DB /* NetworkCalls.h */,
 				44D792F51831FE6B00C596DB /* NetworkCalls.m */,
-				4443C10E183B1D7500024B40 /* RestCommand.h */,
-				4443C10F183B1D7500024B40 /* RestCommand.m */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -373,6 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4443C113183D98F000024B40 /* Callback.m in Sources */,
 				44D88FAB1820B8B1009CCE78 /* Restaurant.m in Sources */,
 				44D88FAE1820BC95009CCE78 /* User.m in Sources */,
 				4400B99B1818CB910017A780 /* AppDelegate.m in Sources */,
@@ -380,12 +376,10 @@
 				44D88FB11820C0E1009CCE78 /* ObjectFactory.m in Sources */,
 				44D792F21831F47B00C596DB /* IntroViewController.m in Sources */,
 				4442D02E181A2876008252BB /* ListViewController.m in Sources */,
-				4443C109183B144000024B40 /* NetworkCallback.m in Sources */,
 				4400B9971818CB910017A780 /* main.m in Sources */,
 				4442D03A181A2C4D008252BB /* OptionsViewController.m in Sources */,
 				44D792F61831FE6B00C596DB /* NetworkCalls.m in Sources */,
 				44D88FA71820B72C009CCE78 /* DetailViewController.m in Sources */,
-				4443C110183B1D7500024B40 /* RestCommand.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

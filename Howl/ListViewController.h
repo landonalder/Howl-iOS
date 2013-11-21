@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Callback.h"
 
-@interface ListViewController : UITableViewController
+@interface ListViewController : UITableViewController <CallbackDelegate>
+
+
 @end

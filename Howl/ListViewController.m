@@ -9,6 +9,8 @@
 #import "ListViewController.h"
 #import "MapViewController.h"
 #import "DetailViewController.h"
+#import "Callback.h"
+#import "NetworkCalls.h"
 #import "ObjectFactory.h"
 #import "Restaurant.h"
 
@@ -27,6 +29,7 @@
 {
     [super viewDidLoad];
     self.title = @"Howl";
+    [NetworkCalls fetchData:[[NSURL alloc] initWithString:@"http://nodejs-discoverhowl.rhcloud.com/list/1"] withCallback:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,7 +55,6 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [UITableViewCell new];
-        
         Restaurant * restaurant = [ObjectFactory getRestaurant:indexPath.row];
         
         UILabel * restName = [UILabel new];
@@ -85,6 +87,27 @@
     
     
     return cell;
+}
+
+-(void)onAction:(NSString *)action object:(NSObject *)value
+{
+    NSArray * restList = (NSArray *)value;
+    NSDictionary * temp;
+    Restaurant * r;
+    for (int i = 0; i < [restList count]; i++)
+    {
+        temp = [restList objectAtIndex:i];
+        r = [Restaurant new];
+        [r setNumber:i];
+        [r setName: [temp objectForKey:@"restname"]];
+        [r setAddress:[temp objectForKey:@"restaddress"]];
+        [r setPhone:[temp objectForKey:@"restphone"]];
+        [r setLatitude:[[temp objectForKey:@"restlat"] doubleValue]];
+        [r setLongitude:[[temp objectForKey:@"restlong"] doubleValue]];
+        [r setVotes:[[temp objectForKey:@"restvotes"] integerValue]];
+        [ObjectFactory addRestaurant:r];
+    }
+    [self.tableView reloadData];
 }
 
 /*

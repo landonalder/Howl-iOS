@@ -7,12 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Callback.h"
 
 @interface NetworkCalls : NSObject
 
-+(NSData *)fetchData:(NSURL *)fromURL;
-+(NSArray *)parseRestaurants:(NSData *)restaurants;
-+(void)setData:(NSString *)data forURL:(NSURL *)url;
++(void)fetchData:(NSURL *)fromURL withCallback:(Callback *)callback;
 +(void)putToURL:(NSURL *)url;
 
 

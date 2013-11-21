@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "User.h"
+#import "Callback.h"
 #import "Restaurant.h"
 
 @interface ObjectFactory : NSObject
@@ -15,5 +16,7 @@
 +(User *)getUser;
 +(NSMutableArray *)getRestaurants;
 +(Restaurant *)getRestaurant:(NSUInteger)number;
++(void)addRestaurant:(Restaurant *)rest atIndex:(NSUInteger)index;
++(void)addRestaurant:(Restaurant *)rest;
 
 @end

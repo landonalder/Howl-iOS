@@ -7,34 +7,27 @@
 //
 
 #import "NetworkCalls.h"
+#import "Callback.h"
+#import "ObjectFactory.h"
 
 @implementation NetworkCalls
 
-+(void)fetchData:(NSURL *)fromURL
-{
-    NSURLRequest * urlRequest = [NSURLRequest requestWithURL:fromURL cachePolicy:NSURLRequestReloadRevalidatingCacheData timeoutInterval:30];
-    
-    NSData * urlData;
-    NSURLResponse * response;
-    NSError * error = nil;
-    
-    [NSURLConnection sendAsynchronousRequest:urlRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * response, NSData * urldata, NSError * error) {
-        [self parseRestaurants:urlData];
-    }];
-}
+NSData * dataResponse;
 
-+(NSArray *)parseRestaurants:(NSData *)restaurants
++(void)fetchData:(NSURL *)fromURL withCallback:(Callback *)callback
 {
-    NSError * error = nil;
-    id object = [NSJSONSerialization JSONObjectWithData:restaurants options:0 error:&error];
+    NSMutableURLRequest * urlRequest = [NSMutableURLRequest new];
+    [urlRequest setHTTPMethod:@"GET"];
+    [urlRequest setURL:fromURL];
     
-    if(!error)
-    {
-        return (NSArray *) object;
-    } else
-    {
-        return nil;
-    }
+    [NSURLConnection sendAsynchronousRequest:urlRequest queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+        if (connectionError) {
+            NSLog(@"%@", [connectionError localizedDescription]);
+        } else {
+            NSArray * restList = [NSJSONSerialization JSONObjectWithData:data options:0 error:Nil];
+            [(id<CallbackDelegate>)callback onAction:nil object:restList];
+        }
+    }];
 }
 
 +(void)putToURL:(NSURL *)url
