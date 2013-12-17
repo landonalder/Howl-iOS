@@ -15,9 +15,4 @@
     
 }
 
--(NSString *)getName
-{
-    return nil;
-}
-
 @end

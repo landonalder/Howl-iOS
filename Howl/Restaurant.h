@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Callback.h"
 
-@interface Restaurant : NSObject
+@interface Restaurant : NSObject <CallbackDelegate>
 
 -(void)setName:(NSString *)name;
 -(void)setNumber:(NSInteger)number;
@@ -27,5 +28,7 @@
 
 -(void)increaseVotes;
 -(void)decreaseVotes;
+
+-(void)updateInfo;
 
 @end

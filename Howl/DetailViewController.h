@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
 
 @interface DetailViewController : UIViewController
 
@@ -19,7 +20,11 @@
 @property (atomic, weak) IBOutlet UILabel * pTakeOut;
 
 @property (atomic, weak) IBOutlet UIButton * pCall;
-@property (atomic, weak) IBOutlet UIButton * pLocate;
+@property (atomic, weak) IBOutlet UIButton * pNavigate;
+
+@property (atomic, weak) IBOutlet MKMapView * pMap;
+
+@property (atomic, weak) IBOutlet UIScrollView * scrollView;
 
 @property (atomic) NSInteger restNum;
 

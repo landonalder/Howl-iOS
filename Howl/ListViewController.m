@@ -103,7 +103,7 @@
     {
         temp = [restList objectAtIndex:i];
         r = [Restaurant new];
-        [r setNumber:i];
+        [r setNumber: [[temp objectForKey:@"restno"] intValue]];
         [r setName: [temp objectForKey:@"restname"]];
         [r setAddress:[temp objectForKey:@"restaddress"]];
         [r setPhone:[temp objectForKey:@"restphone"]];

@@ -12,8 +12,6 @@
 
 -(void)onAction:(NSString *)action object:(NSObject *)value;
 
--(NSString *)getName;
-
 @end
 
 @interface Callback : NSObject <CallbackDelegate>

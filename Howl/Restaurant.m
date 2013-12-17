@@ -90,7 +90,25 @@
 
 -(void)increaseVotes
 {
-    [NetworkCalls putToURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%d", @"http://nodejs-discoverhowl.rhcloud.com/vote/1", self.pNumber]]];
+    [NetworkCalls putToURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%d", @"http://nodejs-discoverhowl.rhcloud.com/vote/", self.pNumber]]];
+    [self updateInfo];
+}
+
+// Update the info for the restaurant whenever an action is taken (ex, increase votes)
+-(void)updateInfo
+{
+    [NetworkCalls fetchData:[[NSURL alloc] initWithString:[NSString stringWithFormat:@"%@%d", @"http://nodejs-discoverhowl.rhcloud.com/restaurants/", self.pNumber]] withCallback:self];
+}
+
+-(void)onAction:(NSString *)action object:(NSObject *)value;
+{
+    NSDictionary * temp = (NSDictionary *)[(NSArray *) value objectAtIndex:0];
+    [self setName: [temp objectForKey:@"restname"]];
+    [self setAddress:[temp objectForKey:@"restaddress"]];
+    [self setPhone:[temp objectForKey:@"restphone"]];
+    [self setLatitude:[[temp objectForKey:@"restlat"] doubleValue]];
+    [self setLongitude:[[temp objectForKey:@"restlong"] doubleValue]];
+    [self setVotes:[[temp objectForKey:@"restvotes"] integerValue]];
 }
 
 -(void)decreaseVotes
