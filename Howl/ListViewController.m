@@ -24,6 +24,13 @@
     return self;
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self.navigationController.navigationBar setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+                                                           [UIColor whiteColor], NSForegroundColorAttributeName,
+                                                           [UIFont fontWithName:@"HoeflerText-Black" size:24.0], NSFontAttributeName, nil]];
+}
+
 -(void)viewDidLoad
 {
     [super viewDidLoad];
@@ -53,10 +60,9 @@
     return 10;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:nil];
     if (cell == nil) {
         cell = [UITableViewCell new];
         Restaurant * restaurant = [ObjectFactory getRestaurant:indexPath.row];

@@ -82,18 +82,7 @@
     
     // Navigation bar appearance
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.0f/255.0f green:121.0f/255.0f blue:226.0f/255.f alpha:1.0];
-    [[UINavigationBar appearance] setTitleTextAttributes: @{
-                                                            NSForegroundColorAttributeName: [UIColor whiteColor],
-                                                            NSFontAttributeName: [UIFont fontWithName:@"HoeflerText-Black" size:24.0f]
-                                                            }];
-    [self.navigationController.navigationItem.titleView sizeToFit];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    
-    UIView *colourView = [[UIView alloc] initWithFrame:CGRectMake(0.f, -20.f, 320.f, 64.f)];
-    colourView.opaque = NO;
-    colourView.alpha = .4f;
-    colourView.backgroundColor = self.navigationController.navigationBar.barTintColor;
-    [self.navigationController.navigationBar.layer insertSublayer:colourView.layer atIndex:1];
     
     if(![[ObjectFactory getUser] isActive])
     {

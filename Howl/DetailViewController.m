@@ -34,14 +34,15 @@ Restaurant * r;
     [super viewDidLoad];
     [self initFields];
     [self initMap];
-    self.scrollView.contentSize = CGSizeMake(320, 600);
+    self.automaticallyAdjustsScrollViewInsets = NO;
+    self.scrollView.contentSize = CGSizeMake(320, 644);
+    self.scrollView.contentOffset = CGPointMake(0, 44);
 }
 
 -(void)initMap
 {
     MKPointAnnotation * point = [[MKPointAnnotation alloc] init];
     point.coordinate = CLLocationCoordinate2DMake(r.getLongitude, r.getLatitude);
-    point.title = r.getName;
     
     CLLocationCoordinate2D track;
     track.latitude = r.getLongitude;
@@ -54,7 +55,6 @@ Restaurant * r;
     region.span = span;
     region.center = track;
     [self.pMap addAnnotation:point];
-    [self.pMap selectAnnotation:point animated:YES];
     [self.pMap setRegion:region animated:FALSE];
     [self.pMap regionThatFits:region];
 }
@@ -62,11 +62,88 @@ Restaurant * r;
 -(void)initFields
 {
     r = [ObjectFactory getRestaurant:self.restNum];
-    self.pRestName.text = r.getName;
-    self.pVotes.text = [NSString stringWithFormat:@"%i", r.getVotes];
-    [self.pCall addTarget:self action:@selector(call) forControlEvents:UIControlEventTouchUpInside];
-    [self.pNavigate addTarget:self action:@selector(navigate) forControlEvents:UIControlEventTouchUpInside];
+    [self.navigationController.navigationBar setTitleTextAttributes: @{
+                                                            NSForegroundColorAttributeName: [UIColor whiteColor],
+                                                            NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Medium" size:20.0f]
+                                                            }];
+    self.title = r.getName;
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 0) {
+        return 44;
+    }
+    else
+    {
+        return 60;
+    }
+    
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:nil];
+    if (cell == nil)
+    {
+        cell = [UITableViewCell new];
+        
+        UILabel * title = [UILabel new];
+        title.frame = CGRectMake(15, 2, 270, 40);
+        title.backgroundColor = [UIColor clearColor];
+        title.font = [UIFont boldSystemFontOfSize:17.0f];
+
+        
+        UILabel * info = [UILabel new];
+        info.textAlignment = NSTextAlignmentRight;
+        info.frame = CGRectMake(0, 2, 305, 40);
+        info.backgroundColor = [UIColor clearColor];
+        if (indexPath.row == 0)
+        {
+            title.text = @"Call";
+            info.text = [r getPhone];
+        } else
+        {
+            title.text = @"Directions";
+            info.text = [r getAddress];
+            UILabel * city = [UILabel new];
+            city.frame = CGRectMake(0, 30, 305, 20);
+            city.textAlignment = NSTextAlignmentRight;
+            city.backgroundColor = [UIColor clearColor];
+            city.font = [UIFont systemFontOfSize:15.0];
+            city.textColor = [UIColor grayColor];
+            city.text = @"Bellingham, WA";
+            [cell addSubview:city];
+        }
+        [cell addSubview:title];
+        [cell addSubview:info];
+    }
+    return cell;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 2;
+}
+
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.row == 0)
+    {
+        [self call];
+    } else
+    {
+        [self navigate];
+    }
+}
+
+
 
 -(void)call
 {
@@ -76,7 +153,6 @@ Restaurant * r;
 
 -(void)navigate
 {
-    // Still much more to do
     MKPlacemark * placeMark = [[MKPlacemark alloc] initWithCoordinate:CLLocationCoordinate2DMake(r.getLongitude, r.getLatitude) addressDictionary:nil];
     MKMapItem * mapItem = [[MKMapItem alloc] initWithPlacemark:placeMark];
     mapItem.name = r.getName;
