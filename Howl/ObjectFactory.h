@@ -18,5 +18,7 @@
 +(Restaurant *)getRestaurant:(NSUInteger)number;
 +(void)addRestaurant:(Restaurant *)rest atIndex:(NSUInteger)index;
 +(void)addRestaurant:(Restaurant *)rest;
++(UIColor *)getBlue;
++ (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize;
 
 @end

@@ -47,7 +47,7 @@ Restaurant * r;
     CLLocationCoordinate2D center;
     center.latitude = r.getLongitude;
     center.longitude = r.getLatitude;
-    center.latitude += 0.01 * 0.18; // To correct for the map being shifted down
+    center.latitude += 0.01 * 0.20; // To correct for the map being shifted down
     
     MKCoordinateRegion region;
     MKCoordinateSpan span;
@@ -69,11 +69,19 @@ Restaurant * r;
                                                             NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Medium" size:20.0f]
                                                             }];
     self.title = r.getName;
+    
+    [self.pUpVote setTintColor:[ObjectFactory getBlue]];
+    [self.pUpVote setImage: [ObjectFactory imageWithImage:[UIImage imageNamed:@"up.png"] scaledToSize:CGSizeMake(20, 11)] forState:UIControlStateNormal];
+    [self.pUpVote setTitleEdgeInsets:UIEdgeInsetsMake(0.0, 15.0, 0.0, 0.0)];
+
+    [self.pDownVote setTintColor:[ObjectFactory getBlue]];
+    [self.pDownVote setImage: [ObjectFactory imageWithImage:[UIImage imageNamed:@"down.png"] scaledToSize:CGSizeMake(20, 11)] forState:UIControlStateNormal];
+    [self.pDownVote setTitleEdgeInsets:UIEdgeInsetsMake(0.0, 15.0, 0.0, 0.0)];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 1) {
+    if (indexPath.section == 0 && indexPath.row == 1) {
         return 60;
     }
     else
@@ -101,46 +109,45 @@ Restaurant * r;
         info.frame = CGRectMake(0, 2, 305, 40);
         info.backgroundColor = [UIColor clearColor];
         
-        if(indexPath.row < 2)
+        if (indexPath.section == 0)
         {
-            cell.backgroundColor = [UIColor colorWithRed:100.0/255.0f green:100.0/255.0f blue:100.0/255.0f alpha:1.0];
-            title.textColor = [UIColor whiteColor];
-            info.textColor = [UIColor whiteColor];
-        }
-        
-        if (indexPath.row == 0)
+            info.textColor = [ObjectFactory getBlue];
+            if (indexPath.row == 0)
+            {
+                title.text = @"Call";
+                info.text = [r getPhone];
+            } else
+            {
+                title.text = @"Directions";
+                info.text = [r getAddress];
+                UILabel * city = [UILabel new];
+                city.frame = CGRectMake(0, 30, 305, 20);
+                city.textAlignment = NSTextAlignmentRight;
+                city.backgroundColor = [UIColor clearColor];
+                city.font = [UIFont systemFontOfSize:15.0];
+                city.textColor = [UIColor grayColor];
+                city.text = @"Bellingham, WA";
+                [cell addSubview:city];
+            }
+        } else
         {
-            title.text = @"Call";
-            info.text = [r getPhone];
-        } else if (indexPath.row == 1)
-        {
-            title.text = @"Directions";
-            info.text = [r getAddress];
-            UILabel * city = [UILabel new];
-            city.frame = CGRectMake(0, 30, 305, 20);
-            city.textAlignment = NSTextAlignmentRight;
-            city.backgroundColor = [UIColor clearColor];
-            city.font = [UIFont systemFontOfSize:15.0];
-            city.textColor = [UIColor grayColor];
-            city.text = @"Bellingham, WA";
-            city.textColor = [UIColor lightGrayColor];
-            [cell addSubview:city];
-        } else if (indexPath.row == 2)
-        {
-            title.text = @"Cuisine";
-            info.text = @"Mexican";
-        } else if (indexPath.row == 3)
-        {
-            title.text = @"Hours";
-            info.text = @"11a - 12p";
-        } else if (indexPath.row == 4)
-        {
-            title.text = @"Drinks";
-            info.text = @"Full bar";
-        } else if (indexPath.row == 5)
-        {
-            title.text = @"Take out";
-            info.text = @"Yes";
+            info.font = [UIFont systemFontOfSize:15.0f];
+            if (indexPath.row == 0)
+            {
+                title.text = @"Cuisine";
+                info.text = @"Mexican";
+            } else if (indexPath.row == 1)
+            {
+                title.text = @"Hours";
+                info.text = @"11a - 12p";
+            } else if (indexPath.row == 2)
+            {
+                title.text = @"Drinks";
+                info.text = @"Full bar";
+            } else            {
+                title.text = @"Take out";
+                info.text = @"Yes";
+            }
         }
         
         [cell addSubview:title];
@@ -151,27 +158,38 @@ Restaurant * r;
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 6;
-}
-
-
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (indexPath.row == 0)
+    if (section == 0)
     {
-        [self call];
+        return 2;
     } else
     {
-        [self navigate];
+        return 4;
     }
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (indexPath.section == 0)
+    {
+        if (indexPath.row == 0)
+        {
+            [self call];
+        } else
+        {
+            [self navigate];
+        }
+    }
+}
 
+-(BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return indexPath.section == 0;
+}
 
 -(void)call
 {

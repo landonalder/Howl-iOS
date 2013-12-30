@@ -81,7 +81,7 @@
     self.window.rootViewController = self.navigationController;
     
     // Navigation bar appearance
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.0f/255.0f green:110.0f/255.0f blue:226.0f/255.f alpha:1.0];
+    self.navigationController.navigationBar.barTintColor = [ObjectFactory getBlue];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
     if(![[ObjectFactory getUser] isActive])

@@ -24,6 +24,9 @@
 
 @property (atomic, weak) IBOutlet UIScrollView * scrollView;
 
+@property (atomic, weak) IBOutlet UIButton * pUpVote;
+@property (atomic, weak) IBOutlet UIButton * pDownVote;
+
 @property (atomic) NSInteger restNum;
 
 -(void)initFields;

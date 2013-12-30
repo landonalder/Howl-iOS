@@ -25,9 +25,9 @@
 		4442D03A181A2C4D008252BB /* OptionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4442D038181A2C4D008252BB /* OptionsViewController.m */; };
 		4442D03B181A2C4D008252BB /* Options.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4442D039181A2C4D008252BB /* Options.xib */; };
 		4442D042181A31AA008252BB /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 4442D041181A31AA008252BB /* map.png */; };
-		4443C105183AFC7C00024B40 /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = 4443C103183AFC7C00024B40 /* down.png */; };
-		4443C106183AFC7C00024B40 /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = 4443C104183AFC7C00024B40 /* up.png */; };
 		4443C113183D98F000024B40 /* Callback.m in Sources */ = {isa = PBXBuildFile; fileRef = 4443C112183D98F000024B40 /* Callback.m */; };
+		449C83F7187124BA003DF506 /* up.png in Resources */ = {isa = PBXBuildFile; fileRef = 449C83F5187124BA003DF506 /* up.png */; };
+		449C83F8187124BA003DF506 /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = 449C83F6187124BA003DF506 /* down.png */; };
 		44D792F21831F47B00C596DB /* IntroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D792F01831F47B00C596DB /* IntroViewController.m */; };
 		44D792F31831F47B00C596DB /* Intro.xib in Resources */ = {isa = PBXBuildFile; fileRef = 44D792F11831F47B00C596DB /* Intro.xib */; };
 		44D792F61831FE6B00C596DB /* NetworkCalls.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D792F51831FE6B00C596DB /* NetworkCalls.m */; };
@@ -75,10 +75,10 @@
 		4442D038181A2C4D008252BB /* OptionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OptionsViewController.m; path = Howl/OptionsViewController.m; sourceTree = "<group>"; };
 		4442D039181A2C4D008252BB /* Options.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Options.xib; path = Howl/Options.xib; sourceTree = "<group>"; };
 		4442D041181A31AA008252BB /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
-		4443C103183AFC7C00024B40 /* down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down.png; sourceTree = "<group>"; };
-		4443C104183AFC7C00024B40 /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = up.png; sourceTree = "<group>"; };
 		4443C111183D98F000024B40 /* Callback.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Callback.h; path = Howl/Callback.h; sourceTree = "<group>"; };
 		4443C112183D98F000024B40 /* Callback.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Callback.m; path = Howl/Callback.m; sourceTree = "<group>"; };
+		449C83F5187124BA003DF506 /* up.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = up.png; sourceTree = "<group>"; };
+		449C83F6187124BA003DF506 /* down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down.png; sourceTree = "<group>"; };
 		44D792EF1831F47B00C596DB /* IntroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IntroViewController.h; path = Howl/IntroViewController.h; sourceTree = "<group>"; };
 		44D792F01831F47B00C596DB /* IntroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IntroViewController.m; path = Howl/IntroViewController.m; sourceTree = "<group>"; };
 		44D792F11831F47B00C596DB /* Intro.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = Intro.xib; path = Howl/Intro.xib; sourceTree = "<group>"; };
@@ -247,9 +247,9 @@
 		4442D03C181A2E9A008252BB /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				4443C103183AFC7C00024B40 /* down.png */,
-				4443C104183AFC7C00024B40 /* up.png */,
 				4442D041181A31AA008252BB /* map.png */,
+				449C83F5187124BA003DF506 /* up.png */,
+				449C83F6187124BA003DF506 /* down.png */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -329,14 +329,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4443C106183AFC7C00024B40 /* up.png in Resources */,
 				44D792F31831F47B00C596DB /* Intro.xib in Resources */,
 				4400B9951818CB910017A780 /* InfoPlist.strings in Resources */,
-				4443C105183AFC7C00024B40 /* down.png in Resources */,
+				449C83F8187124BA003DF506 /* down.png in Resources */,
 				4442D02F181A2876008252BB /* List.xib in Resources */,
 				44D88FA81820B72C009CCE78 /* Detail.xib in Resources */,
 				4442D03B181A2C4D008252BB /* Options.xib in Resources */,
 				4442D042181A31AA008252BB /* map.png in Resources */,
+				449C83F7187124BA003DF506 /* up.png in Resources */,
 				4400B99D1818CB910017A780 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
