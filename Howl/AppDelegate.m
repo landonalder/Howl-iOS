@@ -69,24 +69,24 @@
     
     UIViewController * vc;
     // Future check if user account is created
-    if (![[ObjectFactory getUser] isActive])
+    /*if (![[ObjectFactory getUser] isActive])
     {
         vc = [[IntroViewController alloc] initWithNibName:@"Intro" bundle:nil];
     } else
-    {
+    { */
         vc = [[ListViewController alloc] initWithNibName:@"List" bundle:nil];
-    }
+    //}
     
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = self.navigationController;
     
     // Navigation bar appearance
-    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.0f/255.0f green:121.0f/255.0f blue:226.0f/255.f alpha:1.0];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.0f/255.0f green:110.0f/255.0f blue:226.0f/255.f alpha:1.0];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     
     if(![[ObjectFactory getUser] isActive])
     {
-        self.navigationController.navigationBarHidden = YES;
+        //self.navigationController.navigationBarHidden = YES;
     }
     
     [self.window makeKeyAndVisible];

@@ -44,16 +44,18 @@ Restaurant * r;
     MKPointAnnotation * point = [[MKPointAnnotation alloc] init];
     point.coordinate = CLLocationCoordinate2DMake(r.getLongitude, r.getLatitude);
     
-    CLLocationCoordinate2D track;
-    track.latitude = r.getLongitude;
-    track.longitude = r.getLatitude;
+    CLLocationCoordinate2D center;
+    center.latitude = r.getLongitude;
+    center.longitude = r.getLatitude;
+    center.latitude += 0.01 * 0.18; // To correct for the map being shifted down
     
     MKCoordinateRegion region;
     MKCoordinateSpan span;
     span.latitudeDelta = 0.01;
     span.longitudeDelta = 0.01;
+    
     region.span = span;
-    region.center = track;
+    region.center = center;
     [self.pMap addAnnotation:point];
     [self.pMap setRegion:region animated:FALSE];
     [self.pMap regionThatFits:region];
@@ -71,12 +73,12 @@ Restaurant * r;
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row == 0) {
-        return 44;
+    if (indexPath.row == 1) {
+        return 60;
     }
     else
     {
-        return 60;
+        return 44;
     }
     
 }
@@ -98,11 +100,19 @@ Restaurant * r;
         info.textAlignment = NSTextAlignmentRight;
         info.frame = CGRectMake(0, 2, 305, 40);
         info.backgroundColor = [UIColor clearColor];
+        
+        if(indexPath.row < 2)
+        {
+            cell.backgroundColor = [UIColor colorWithRed:100.0/255.0f green:100.0/255.0f blue:100.0/255.0f alpha:1.0];
+            title.textColor = [UIColor whiteColor];
+            info.textColor = [UIColor whiteColor];
+        }
+        
         if (indexPath.row == 0)
         {
             title.text = @"Call";
             info.text = [r getPhone];
-        } else
+        } else if (indexPath.row == 1)
         {
             title.text = @"Directions";
             info.text = [r getAddress];
@@ -113,8 +123,26 @@ Restaurant * r;
             city.font = [UIFont systemFontOfSize:15.0];
             city.textColor = [UIColor grayColor];
             city.text = @"Bellingham, WA";
+            city.textColor = [UIColor lightGrayColor];
             [cell addSubview:city];
+        } else if (indexPath.row == 2)
+        {
+            title.text = @"Cuisine";
+            info.text = @"Mexican";
+        } else if (indexPath.row == 3)
+        {
+            title.text = @"Hours";
+            info.text = @"11a - 12p";
+        } else if (indexPath.row == 4)
+        {
+            title.text = @"Drinks";
+            info.text = @"Full bar";
+        } else if (indexPath.row == 5)
+        {
+            title.text = @"Take out";
+            info.text = @"Yes";
         }
+        
         [cell addSubview:title];
         [cell addSubview:info];
     }
@@ -128,7 +156,7 @@ Restaurant * r;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 2;
+    return 6;
 }
 
 
