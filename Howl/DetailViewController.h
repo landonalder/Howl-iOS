@@ -11,14 +11,7 @@
 
 @interface DetailViewController : UIViewController <UITableViewDelegate>
 
-@property (atomic, weak) IBOutlet UILabel * pRank;
-@property (atomic, weak) IBOutlet UILabel * pVotes;
-@property (atomic, weak) IBOutlet UILabel * pCuisine;
-@property (atomic, weak) IBOutlet UILabel * pHours;
-@property (atomic, weak) IBOutlet UILabel * pDrinks;
-@property (atomic, weak) IBOutlet UILabel * pTakeOut;
-
-@property (atomic, weak) IBOutlet UITableView * pContact;
+@property (atomic, weak) IBOutlet UITableView * pTable;
 
 @property (atomic, weak) IBOutlet MKMapView * pMap;
 

@@ -37,6 +37,7 @@
 		44D88FAE1820BC95009CCE78 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D88FAD1820BC95009CCE78 /* User.m */; };
 		44D88FB11820C0E1009CCE78 /* ObjectFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 44D88FB01820C0E1009CCE78 /* ObjectFactory.m */; };
 		44F4AABA183DBE6E00E85575 /* Validator.m in Sources */ = {isa = PBXBuildFile; fileRef = 44F4AAB9183DBE6E00E85575 /* Validator.m */; };
+		44FBE54F1906E1DD00BFC2B2 /* seattle.png in Resources */ = {isa = PBXBuildFile; fileRef = 44FBE54E1906E1DD00BFC2B2 /* seattle.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		44D88FB01820C0E1009CCE78 /* ObjectFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObjectFactory.m; path = Howl/ObjectFactory.m; sourceTree = "<group>"; };
 		44F4AAB8183DBE6E00E85575 /* Validator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Validator.h; path = Howl/Validator.h; sourceTree = "<group>"; };
 		44F4AAB9183DBE6E00E85575 /* Validator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Validator.m; path = Howl/Validator.m; sourceTree = "<group>"; };
+		44FBE54E1906E1DD00BFC2B2 /* seattle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = seattle.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +249,7 @@
 		4442D03C181A2E9A008252BB /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				44FBE54E1906E1DD00BFC2B2 /* seattle.png */,
 				4442D041181A31AA008252BB /* map.png */,
 				449C83F5187124BA003DF506 /* up.png */,
 				449C83F6187124BA003DF506 /* down.png */,
@@ -335,6 +338,7 @@
 				4442D02F181A2876008252BB /* List.xib in Resources */,
 				44D88FA81820B72C009CCE78 /* Detail.xib in Resources */,
 				4442D03B181A2C4D008252BB /* Options.xib in Resources */,
+				44FBE54F1906E1DD00BFC2B2 /* seattle.png in Resources */,
 				4442D042181A31AA008252BB /* map.png in Resources */,
 				449C83F7187124BA003DF506 /* up.png in Resources */,
 				4400B99D1818CB910017A780 /* Images.xcassets in Resources */,

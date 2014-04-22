@@ -6,9 +6,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController">
             <connections>
-                <outlet property="pContact" destination="pbv-7W-pvb" id="5Ep-6r-26o"/>
                 <outlet property="pDownVote" destination="Ojb-h4-Eee" id="diG-Ud-Dwp"/>
                 <outlet property="pMap" destination="R9G-Fy-jKv" id="kvx-AZ-YYR"/>
+                <outlet property="pTable" destination="pbv-7W-pvb" id="Kf2-sJ-kdV"/>
                 <outlet property="pUpVote" destination="KyW-Vi-iaG" id="NeD-UA-nqd"/>
                 <outlet property="scrollView" destination="98v-bD-tFD" id="4kg-KL-fZ1"/>
                 <outlet property="view" destination="1" id="3"/>

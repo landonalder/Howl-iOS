@@ -34,6 +34,7 @@ Restaurant * r;
     [super viewDidLoad];
     [self initFields];
     [self initMap];
+    [self initButtons];
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.scrollView.contentSize = CGSizeMake(320, 644);
     self.scrollView.contentOffset = CGPointMake(0, 44);
@@ -69,11 +70,16 @@ Restaurant * r;
                                                             NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Medium" size:20.0f]
                                                             }];
     self.title = r.getName;
-    
+}
+
+-(void)initButtons
+{
     [self.pUpVote setTintColor:[ObjectFactory getBlue]];
     [self.pUpVote setImage: [ObjectFactory imageWithImage:[UIImage imageNamed:@"up.png"] scaledToSize:CGSizeMake(20, 11)] forState:UIControlStateNormal];
     [self.pUpVote setTitleEdgeInsets:UIEdgeInsetsMake(0.0, 15.0, 0.0, 0.0)];
-
+    [self.pUpVote addTarget:r action:@selector(increaseVotes) forControlEvents:UIControlEventTouchUpInside];
+    
+    
     [self.pDownVote setTintColor:[ObjectFactory getBlue]];
     [self.pDownVote setImage: [ObjectFactory imageWithImage:[UIImage imageNamed:@"down.png"] scaledToSize:CGSizeMake(20, 11)] forState:UIControlStateNormal];
     [self.pDownVote setTitleEdgeInsets:UIEdgeInsetsMake(0.0, 15.0, 0.0, 0.0)];
@@ -109,6 +115,7 @@ Restaurant * r;
         info.frame = CGRectMake(0, 2, 305, 40);
         info.backgroundColor = [UIColor clearColor];
         
+        // Call/Directions section
         if (indexPath.section == 0)
         {
             info.textColor = [ObjectFactory getBlue];
@@ -129,9 +136,11 @@ Restaurant * r;
                 city.text = @"Bellingham, WA";
                 [cell addSubview:city];
             }
+        // Info section
         } else
         {
             info.font = [UIFont systemFontOfSize:15.0f];
+            info.textColor = [UIColor grayColor];
             if (indexPath.row == 0)
             {
                 title.text = @"Cuisine";

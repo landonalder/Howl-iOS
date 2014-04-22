@@ -69,13 +69,13 @@
     
     UIViewController * vc;
     // Future check if user account is created
-    /*if (![[ObjectFactory getUser] isActive])
+    if (![[ObjectFactory getUser] isActive])
     {
         vc = [[IntroViewController alloc] initWithNibName:@"Intro" bundle:nil];
     } else
-    { */
+    {
         vc = [[ListViewController alloc] initWithNibName:@"List" bundle:nil];
-    //}
+    }
     
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:vc];
     self.window.rootViewController = self.navigationController;
@@ -86,7 +86,7 @@
     
     if(![[ObjectFactory getUser] isActive])
     {
-        //self.navigationController.navigationBarHidden = YES;
+        self.navigationController.navigationBarHidden = YES;
     }
     
     [self.window makeKeyAndVisible];
