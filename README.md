@@ -11,8 +11,7 @@ For general updates, check out <a href="http://nodejs-discoverhowl.rhcloud.com/"
 If you're interested in monitoring the Android app's progress, check <a href="https://github.com/allensuner/howl-android-repo">here</a>.
 
 Screenshots:
-<img src="/Screenshots/1.jpg" width="50%" height="50%"/>
-![Alt text](/Screenshots/1.jpg)
-![Alt text](/Screenshots/2.jpg)
-![Alt text](/Screenshots/3.jpg)
-![Alt text](/Screenshots/4.jpg)
+<img src="/Screenshots/1.jpg" width="30%" height="30%"/>
+<img src="/Screenshots/2.jpg" width="30%" height="30%"/>
+<img src="/Screenshots/3.jpg" width="30%" height="30%"/>
+<img src="/Screenshots/4.jpg" width="30%" height="30%"/>
